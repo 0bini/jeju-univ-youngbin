@@ -1,58 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>
-      Example
-    </title>
-    <link href='../assets/style.css' rel='stylesheet' type='text/css'>
-  </head>
-  <body>
-    <header class="site-header">
-      <h1 class="site-title">Turtle Ipsum</h1>
-      <p class="site-subtitle">The World's Premier Turtle Fan Club</p>
-    </header>
+<head>
+    <title>자기소개</title>
+</head>
+<body>
+    <p>여기는 원래 main에 있던 내용</p>
+    
+    <p>여기는 내가 새로 작업한 내용</p>
 
-    <nav class="main-nav" aria-label="주요 자료 탐색">
-      <p class="nav-header">Resources</p>
-      <ul class="nav-list">
-        <li class="nav-item nav-item-bull"><a href="https://www.youtube.com/watch?v=CMNry4PE93Y">"I like turtles"</a></li>
-        <li class="nav-item nav-item-bull"><a href="https://en.wikipedia.org/wiki/Turtle">Basic Turtle Info</a></li>
-        <li class="nav-item nav-item-bull"><a href="https://en.wikipedia.org/wiki/Turtles_(chocolate)">Chocolate Turtles</a></li>
-      </ul>
-    </nav>
+    <script>
+    
+        function getGreeting(name) {
+            
+            return `Hello, ${name}! Welcome.`;
+        }
 
-    <main class="main-content">
-      <div>
-        <h2 class="page-title">Welcome to Turtle Ipsum. 
-            <a href="">Click here</a> to learn more.
-        </h2>
+        function Intro1() {
+            return "안녕하세요, 제 이름은 강영빈 입니다";
+        }
+
+        function Intro2() {
+            return "컴퓨터 공학과 입니다.";
+        }
         
-        <img src="https://images.unsplash.com/photo-1593993014354-1b6a3b0a7a0f" 
-             alt="푸른 바닷속을 평화롭게 헤엄치는 바다거북의 클로즈업 사진" 
-             width="150%">
-             
-        <p class="article-text">
-          Turtle ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-        </p>
-      </div>
-    </main>
+        function Intro3() {
+            return "잘 부탁해요";
+        }
 
-    <footer class="footer">
-      <div class="footer-section">
-        <button class="button">Sign up for turtle news</button>
-      </div>
-      <div class="footer-section">
-        <nav aria-label="내부 페이지 탐색">
-          <p class="nav-header footer-title">
-            Internal Pages
-          </p>
-          <ul class="nav-list">
-            <li class="nav-item nav-item-bull"><a href="../">Index</a></li>
-            <li class="nav-item nav-item-bull"><a href="../semantic">Semantic Example</a></li>
-          </ul>
-        </nav>
-      </div>
-      <p class="footer-copyright">&copy; 2016 Instrument</p>
-    </footer>
-  </body>
+        const introFunctions = [Intro1, Intro2, Intro3];
+        let currentIndex = 0;
+
+        setInterval(() => {
+            
+            const nextMessage = introFunctions[currentIndex]();
+            
+            console.log(nextMessage);
+
+            currentIndex = (currentIndex + 1) % introFunctions.length;
+        }, 3000);
+    </script>
+</body>
 </html>
