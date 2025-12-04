@@ -1,0 +1,10 @@
+node_modules/
+# dist/  # Chrome 확장 프로그램 배포를 위해 포함
+*.log
+.DS_Store
+.env
+.vscode/
+*.swp
+*.swo
+*~
+
